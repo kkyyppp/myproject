@@ -3,8 +3,7 @@ package com.csl
 fun main (args: Array<String>) {
         //println("Hello world")
         //Human().hello()
-        val h = Human()
-        h.hello()
+        val h = Human(weight = 1.0f, height = 0f)
 
         //var: 值可改變
         //val: 值不可改
@@ -18,13 +17,36 @@ fun main (args: Array<String>) {
         var b:Boolean = true
         var f:Float = 10.1f
         var s:String  = "str"
-        var c:Char = 'c'
+        var c:Char = 'c';
         var byte:Byte = 12
+
+        var h2 = Human(weight = 55.6f, height = 1.7f)
+        println(h2.bmi())
+
+
+        var h3 = Human("abc", 5f, 10f)
 
 
 }
 
-class Human() {
+class Human(var name:String="jack", var weight:Float, var height:Float) {
+
+        //建構後執行的內容
+        init {
+                //字串裡要有變數 直接加$
+                println("weight = $weight")
+        }
+
+        //次要建構子(secondary constructor) 傳入參數不使用var,
+        // 且如傳入參數primary constructor已設定，要加屬性-主建構子 this()
+        // 且一樣會執行 init()
+      //  constructor(name: String, weight: Float, height: Float): this(weight, height)
+
+        fun bmi(): Float {
+                var bmi = weight / (height*height)
+                return bmi
+        }
+
         fun hello() {
                 println("Hello kotlin")
         }
