@@ -1,5 +1,7 @@
 package com.csl;
 
+import com.csl.student.Student;
+
 public class HelloWorld {
 
     public static void main(String[] args) {
@@ -25,10 +27,17 @@ public class HelloWorld {
         Person p2 = new Person(55.6f, 1.7f);
         System.out.println(p.bmi());
 
+
+        int score = 80;
+        System.out.println(score>80 && score<90);
+        //JAVA中 char昰數值 A=65, a=97
+        char c3 = 'A';
+        System.out.println(c3 > 60);
+
     }
 
 
-    //快速鍵
+    //快速鍵 Help -> keymap reference
     //VCS = alt + `
     //叫出version control = alt + 9
     //複製游標所在的該行到下一行去 = ctrl + D
@@ -36,7 +45,9 @@ public class HelloWorld {
     //debug 執行下一行 = F8
     //debug step nito執行下一行 = F7
     //查看方法可設定之參數 = ctrl + p (多載 overloading)
-    //注解單行
+    //注解單行 = crtl +/
+    //叫出功能選單 = alt + iinsert
+
 
     //System.out.println = sout + tab
     //public static void main(String[] args)  = psvm + tab

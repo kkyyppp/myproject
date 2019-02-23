@@ -26,6 +26,11 @@ fun main (args: Array<String>) {
 
         var h3 = Human("abc", 5f, 10f)
 
+        //kotlon Char不是數值，若要轉成int使用 toInt()
+        val score = 88
+        println(score>60)
+        val c2:Char = 'A'
+        println( c2.toInt() > 60)
 
 }
 
