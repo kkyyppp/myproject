@@ -47,6 +47,45 @@ public class Student {
         else {
             System.out.println("\tFAILED");
         }
+
+
+        int avg = getAvg();
+        char level = 'F';
+        if (avg >= 90) {
+            level = 'A';
+        }
+        else if (avg >= 80) {
+            level = 'B';
+        }
+        else if (avg >= 70) {
+            level = 'C';
+        } else if (avg >= 60) {
+            level = 'D';
+        }
+        else {
+            level = 'F';
+        }
+
+        switch (avg/10) {
+            case 9:
+                level = 'A';
+                break;
+            case 8:
+                level = 'B';
+                break;
+            case 7:
+                level = 'C';
+                break;
+            case 6:
+                level = 'D';
+                break;
+            default:
+                level = 'F';
+        }
+
+
+
+        System.out.println("LEVEL: "+ level);
     }
 
     public int getAvg() {

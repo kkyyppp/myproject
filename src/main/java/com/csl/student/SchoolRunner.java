@@ -23,5 +23,6 @@ public class SchoolRunner {
         student.print();
         System.out.println("Highest Score: "+ student.highest());
 
+
     }
 }

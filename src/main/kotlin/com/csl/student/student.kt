@@ -22,6 +22,8 @@ private fun userInput() {
     println("Highest score: "+ std.highestScore())
     //字串裡呼叫方法 ${ method }
     println("Highest score: ${std.highestScore()}")
+
+
 }
 
 
