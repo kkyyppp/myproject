@@ -34,6 +34,7 @@ fun main (args: Array<String>) {
 
 }
 
+//如果不想讓constructor的參數成為property, 就不要加var/val
 class Human(var name:String="jack", var weight:Float, var height:Float) {
 
         //建構後執行的內容
@@ -56,3 +57,6 @@ class Human(var name:String="jack", var weight:Float, var height:Float) {
                 println("Hello kotlin")
         }
 }
+
+// kotlin 沒有三元運算式  因為 =號/return/字串+法 後面可以放if~else~(JAVA if else 是statement Kotlin則變成Expression)
+// 字串裡呼叫方法 ${ method }

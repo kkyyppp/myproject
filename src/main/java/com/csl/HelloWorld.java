@@ -34,6 +34,8 @@ public class HelloWorld {
         char c3 = 'A';
         System.out.println(c3 > 60);
 
+
+
     }
 
 
@@ -47,8 +49,15 @@ public class HelloWorld {
     //查看方法可設定之參數 = ctrl + p (多載 overloading)
     //注解單行 = crtl +/
     //叫出功能選單 = alt + iinsert
+    //抽取出程method = ctrl + alt +M
 
 
     //System.out.println = sout + tab
     //public static void main(String[] args)  = psvm + tab
+
+    //八個基本資料型態 bool int short long byte float double char
+    //String 是物件不是型態 因為太常使用所以自行呼叫new String()
+    // +號 左右兩邊有任一個是String  另一邊若不是String會自動轉成String
+    // =號 右邊只能放Expression 不能放 statement(敘述式 if~else)
+
 }

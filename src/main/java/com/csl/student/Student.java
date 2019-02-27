@@ -21,8 +21,35 @@ public class Student {
         this.math = math;
     }
 
+    public int highest() {
+
+        int highestScore = 0;
+        if (english > math) {
+            highestScore = english;
+        }
+        else {
+            highestScore = math;
+        }
+
+        highestScore = english>math ? english : math;
+
+        return  highestScore;
+    }
+
+
     public void print() {
-        System.out.println("name: "+ name+ "\tenglish: "+ english+ "\tmath: "+ math +
-                "\taverage: "+ (english+math)/2);
+        System.out.print("name: "+ name+ "\tenglish: "+ english+ "\tmath: "+ math +
+                "\taverage: "+ getAvg());
+
+        if (getAvg() > 60) {
+            System.out.println("\tPASS");
+        }
+        else {
+            System.out.println("\tFAILED");
+        }
+    }
+
+    public int getAvg() {
+        return (english+math)/2;
     }
 }
