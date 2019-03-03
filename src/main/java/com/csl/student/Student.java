@@ -50,6 +50,16 @@ public class Student {
 
 
         int avg = getAvg();
+        char level = getGrade(avg);
+        System.out.println("LEVEL: "+ level);
+    }
+
+    private int getAvg() {
+        return (english+math)/2;
+    }
+
+
+    private char getGrade(int avg) {
         char level = 'F';
         if (avg >= 90) {
             level = 'A';
@@ -82,13 +92,6 @@ public class Student {
             default:
                 level = 'F';
         }
-
-
-
-        System.out.println("LEVEL: "+ level);
-    }
-
-    public int getAvg() {
-        return (english+math)/2;
+        return level;
     }
 }
