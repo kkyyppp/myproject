@@ -3,8 +3,8 @@ package com.csl;
 public class Person {
 
     String name;
-    float weight;
-    float height;
+    float weight;   //kg
+    float height;   //m
 
     public Person() {
 

@@ -24,9 +24,9 @@ private fun userInput() {
 
     std.print()
 
-
-
 }
+
+
 
 
 class StudentK(var name:String, var english:Int, var math:Int) {
@@ -76,7 +76,7 @@ class StudentK(var name:String, var english:Int, var math:Int) {
         println("name: $name\tenglish: $english\tmath: $math\taverage: ${getAvg()}\t${passOrFailed()}\tGrade: ${getGrade(getAvg())}")
     }
 
-    fun getAvg():Int {
+    private fun getAvg():Int {
         return (english+math)/2
     }
 

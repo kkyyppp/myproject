@@ -1,5 +1,7 @@
 package com.csl
 
+//kotlin 和 Java 在同一個package底下能有相同的Class
+
 fun main (args: Array<String>) {
         //println("Hello world")
         //Human().hello()
