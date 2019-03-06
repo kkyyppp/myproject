@@ -2,9 +2,7 @@ package com.csl.parking;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,7 +11,23 @@ public class DateTester {
     public static void main(String[] args) {
         java8();
         java();
+        test();
     }
+
+
+    private static void test() {
+        Date dateNow = new Date();
+        LocalDateTime now = LocalDateTime.now();
+        //毫秒
+        System.out.println( dateNow.getTime() );
+        //秒
+        System.out.println( now.toEpochSecond(ZoneOffset.ofHours(9)) );
+        System.out.println( now.atZone(ZoneId.systemDefault()).toEpochSecond() );
+        //毫秒
+        System.out.println( now.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli() );
+        System.out.println( now.toInstant(ZoneOffset.ofHours(8)).toEpochMilli() );
+    }
+
 
 
     private static void java8() {
@@ -26,10 +40,26 @@ public class DateTester {
         System.out.println(instant);
         System.out.println();
 
-        //不考慮時區 e.g. 2019-03-06T09:52:21.683 格式後面沒有"Z"
+        //LocalDateTime 此類別本身不包含時區 e.g. 2019-03-06T09:52:21.683 格式後面沒有"Z"
         // LoaclDate=日期(年月日)   LoaclTIme=時間 LocalDateTime=日期+時間
         LocalDateTime now = LocalDateTime.now();
         System.out.println(now);
+        System.out.println();
+
+        //因為LocalDateTime類別本身不包含時區，但可以在輸出long值時設定時區
+        //e.g. 2019/03/01 12:00:00 設定時區為東京(+8)，但在輸出toEpochSecond(unix time -單位"秒")時
+        //推算回UTC則會是 2019/03/01 03:00:00 的秒數
+        //https://www.codebyamir.com/blog/add-a-timezone-to-localdatetime-with-zoneddatetime-in-java-8
+        //時區表: https://garygregory.wordpress.com/2013/06/18/what-are-the-java-timezone-ids/
+        //台北 = Asia/Taipei
+        Date date = new Date();
+        LocalDateTime nowCheck = LocalDateTime.now();
+        System.out.println( date);
+        System.out.println( date.getTime());
+        System.out.println( nowCheck.toEpochSecond(ZoneOffset.ofHours(9)));
+        System.out.println( nowCheck.atZone(ZoneId.of("Asia/Tokyo")).toEpochSecond());
+        System.out.println( nowCheck.toInstant(ZoneOffset.ofHours(9)).toEpochMilli());
+        System.out.println( nowCheck.atZone(ZoneId.of("Asia/Tokyo")).toInstant().toEpochMilli());
         System.out.println();
 
         //格式化方式

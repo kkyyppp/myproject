@@ -50,6 +50,7 @@ public class HelloWorld {
     //注解單行 = crtl +/
     //叫出功能選單 = alt + iinsert
     //抽取出程method = ctrl + alt +M
+    //新增Constructor/getter setter = alt + insert
 
 
     //System.out.println = sout + tab

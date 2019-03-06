@@ -8,8 +8,23 @@ import java.util.*
 
 fun main(args:Array<String>) {
 
-    java8()
-   // java()
+     java8()
+   // ava()
+    //test()
+}
+
+fun test() {
+    val dateNow:Date = Date()
+    val now:LocalDateTime = LocalDateTime.now()
+    //毫秒
+    println(dateNow.time)
+    //秒
+    println( now.toEpochSecond(ZoneOffset.ofHours(8)))
+    println(now.atZone(ZoneId.systemDefault()).toEpochSecond())
+    //毫秒
+    println(now.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli())
+    println(now.toInstant(ZoneOffset.ofHours(8)).toEpochMilli())
+
 }
 
 fun java8() {
@@ -23,6 +38,22 @@ fun java8() {
     //LoaclDate=日期(年月日)   LoaclTIme=時間 LocalDateTime=日期+時間
     val now:LocalDateTime = LocalDateTime.now()
     println(now)
+    println()
+
+    //因為LocalDateTime類別本身不包含時區，但可以在輸出long值時設定時區
+    //e.g. 2019/03/01 12:00:00 設定時區為東京(+8)，但在輸出toEpochSecond(unix time -單位"秒")時
+    //推算回UTC則會是 2019/03/01 03:00:00 的秒數
+    //https://www.codebyamir.com/blog/add-a-timezone-to-localdatetime-with-zoneddatetime-in-java-8
+    //時區表: https://garygregory.wordpress.com/2013/06/18/what-are-the-java-timezone-ids/
+    //台北 = Asia/Taipei
+    val date:Date = Date()
+    val nowCheck:LocalDateTime = LocalDateTime.now()
+    println( date )
+    println( date.time )
+    println( nowCheck.toEpochSecond(ZoneOffset.ofHours(8)) )
+    println( nowCheck.atZone(ZoneId.systemDefault()).toEpochSecond() )
+    println( nowCheck.toInstant(ZoneOffset.ofHours(8)).toEpochMilli() )
+    println( nowCheck.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli() )
     println()
 
     //格式化方式
