@@ -1,4 +1,4 @@
-package com.csl.parking;
+package com.csl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
