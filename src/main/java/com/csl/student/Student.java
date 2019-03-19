@@ -55,12 +55,12 @@ public class Student {
         System.out.println("LEVEL: "+ level);
     }
 
-    private int getAvg() {
+    protected int getAvg() {
         return (english+math)/2;
     }
 
 
-    private char getGrade(int avg) {
+    protected char getGrade(int avg) {
         char level = 'F';
         if (avg >= 90) {
             level = 'A';

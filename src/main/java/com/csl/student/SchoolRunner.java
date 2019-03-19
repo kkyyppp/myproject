@@ -6,16 +6,27 @@ public class SchoolRunner {
 
      public static void main(String[] args) {
 
-         Student.pass=50;
-         Student student = new Student("A", 60, 70);
-         student.print();
-         student = new Student("B", 60, 50);
-         student.print();
-
-         StudentK std = new StudentK("A", 50, 30);
-         StudentK.
-        // userInput();
+        inherit();
+         //staticTest();
+         // userInput();
      }
+
+    private static void inherit() {
+        GraduateStudent gtd = new GraduateStudent("Leon", 60,60,70);
+        gtd.print();
+    }
+
+
+    private static void staticTest() {
+        Student.pass=50;
+        Student student = new Student("A", 60, 70);
+        student.print();
+        student = new Student("B", 60, 50);
+        student.print();
+
+        StudentK std = new StudentK("A", 50, 30);
+        System.out.println("pass score:"+   StudentK.getPass());
+    }
 
     private static void userInput() {
         Scanner scanner = new Scanner(System.in);

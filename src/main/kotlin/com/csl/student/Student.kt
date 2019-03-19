@@ -4,16 +4,28 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
+    inherit()
+
+    static()
+
+    // userInput()
+}
+
+private fun inherit() {
+    val gtd:GrafuateStudentK = GrafuateStudentK("Leon", 60, 60, 70)
+    gtd.print()
+}
+
+private fun static() {
     StudentK.pass = 50;
-    var std1:StudentK = StudentK("A",60, 70)
-    var std2:StudentK = StudentK("B", 60, 50)
-    var std3:StudentK = StudentK("C", 40,30)
+    var std1: StudentK = StudentK("A", 60, 70)
+    var std2: StudentK = StudentK("B", 60, 50)
+    var std3: StudentK = StudentK("C", 40, 30)
     std1.print()
     std2.print()
     std3.print()
-
-   // userInput()
 }
+
 
 private fun userInput() {
     val scanner = Scanner(System.`in`)
@@ -35,9 +47,21 @@ private fun userInput() {
 }
 
 
+class GrafuateStudentK(name:String, english:Int, math: Int, var thesis:Int):StudentK(name, english, math) {
+    companion object {
+        val pass:Int = 70
+    }
 
+    override fun print() {
+        println("name:$name\tenglish=$english\tmath=$math\tthesis=$thesis\tavg=${getAvg()}\tispass? = ${passOrFailed()}")
+    }
 
-class StudentK(var name:String, var english:Int, var math:Int) {
+    override fun passOrFailed() = if (getAvg()>pass) "PASS" else "FAILLED"
+
+}
+
+//open代表可以被繼承
+open class StudentK(var name:String, var english:Int, var math:Int) {
     companion object {
         //加入此標籤 則在java可以直接用static的方式使用
         @JvmStatic
@@ -76,7 +100,7 @@ class StudentK(var name:String, var english:Int, var math:Int) {
         return max
     }
 
-    fun print() {
+    open fun print() {
 
         var avg:Int = getAvg()
 
@@ -93,7 +117,7 @@ class StudentK(var name:String, var english:Int, var math:Int) {
         println("name: $name\tenglish: $english\tmath: $math\taverage: ${getAvg()}\t${passOrFailed()}\tGrade: ${getGrade(getAvg())}")
     }
 
-    private fun getAvg():Int {
+    fun getAvg():Int {
         return (english+math)/2
     }
 
@@ -120,6 +144,6 @@ class StudentK(var name:String, var english:Int, var math:Int) {
         return level
     }
 
-    fun passOrFailed() = if (getAvg()>pass) "PASS" else "FAILED"
+    open fun passOrFailed() = if (getAvg()>pass) "PASS" else "FAILED"
 
 }
