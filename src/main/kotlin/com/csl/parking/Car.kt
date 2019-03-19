@@ -5,8 +5,8 @@ import java.time.LocalDateTime
 
 class CarKt(id: String, enterTime: LocalDateTime) {
 
-    private var id:String=""
-    private lateinit var enterTime:LocalDateTime
+    var id:String=""
+    var enterTime:LocalDateTime
     var leaveTime:LocalDateTime = LocalDateTime.now()
         set(value) {
             if (leaveTime.isAfter(enterTime))
@@ -21,5 +21,7 @@ class CarKt(id: String, enterTime: LocalDateTime) {
     fun getDuration():Long {
         return Duration.between(enterTime, leaveTime).toMinutes()
     }
+
+
 
 }

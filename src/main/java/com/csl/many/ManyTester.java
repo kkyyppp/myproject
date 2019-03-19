@@ -2,12 +2,37 @@ package com.csl.many;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class ManyTester {
     public static void main(String[] args) {
 
-        genericsTest();
-        arrayTest();
+        //map();
+        //set();
+        //genericsTest();
+       // arrayTest();
+    }
+
+    private static void map() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("2330", "台積電");
+        map.put("2317", "鴻海");
+        map.put("2330", "TSMC");
+        System.out.println(map.get("2330"));
+        System.out.println(map);
+        for (String key : map.keySet()) {
+            System.out.println(map.get(key));
+        }
+    }
+
+    private static void set() {
+        HashSet<Integer> set = new HashSet<>();
+        set.add(6);
+        set.add(7);
+        set.add(8);
+        set.add(7);
+        System.out.println(set);
     }
 
     //泛型 generics

@@ -4,7 +4,15 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
-    userInput()
+    StudentK.pass = 50;
+    var std1:StudentK = StudentK("A",60, 70)
+    var std2:StudentK = StudentK("B", 60, 50)
+    var std3:StudentK = StudentK("C", 40,30)
+    std1.print()
+    std2.print()
+    std3.print()
+
+   // userInput()
 }
 
 private fun userInput() {
@@ -30,6 +38,15 @@ private fun userInput() {
 
 
 class StudentK(var name:String, var english:Int, var math:Int) {
+    companion object {
+        //加入此標籤 則在java可以直接用static的方式使用
+        @JvmStatic
+        var pass:Int = 60
+        fun test() {
+            println("testing")
+        }
+    }
+
 
     fun highestScore():Int {
         var max = 0
@@ -66,7 +83,7 @@ class StudentK(var name:String, var english:Int, var math:Int) {
         //if else可放入
         println("name: "+ name+ "\tenglish: "+ english+ "\tmath: "+ math +
         "\taverage: "+ avg+ "\t" +
-                if (avg>60) "PASS" else "Failed")
+                if (avg>pass) "PASS" else "FAILED")
 
         var level:Char = getGrade(avg)
         println("Grade: "+ level)
@@ -103,6 +120,6 @@ class StudentK(var name:String, var english:Int, var math:Int) {
         return level
     }
 
-    fun passOrFailed() = if (getAvg()>60) "PASS" else "FAILED"
+    fun passOrFailed() = if (getAvg()>pass) "PASS" else "FAILED"
 
 }

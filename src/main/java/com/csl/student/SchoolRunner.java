@@ -6,7 +6,15 @@ public class SchoolRunner {
 
      public static void main(String[] args) {
 
-         userInput();
+         Student.pass=50;
+         Student student = new Student("A", 60, 70);
+         student.print();
+         student = new Student("B", 60, 50);
+         student.print();
+
+         StudentK std = new StudentK("A", 50, 30);
+         StudentK.
+        // userInput();
      }
 
     private static void userInput() {
@@ -18,11 +26,8 @@ public class SchoolRunner {
         System.out.print("your math score: ");
         int math = scanner.nextInt();
 
-
         Student student = new Student(name, english, math);
         student.print();
         System.out.println("Highest Score: "+ student.highest());
-
-
     }
 }

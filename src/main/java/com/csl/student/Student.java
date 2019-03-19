@@ -5,6 +5,7 @@ public class Student {
     String name;
     int english;
     int math;
+    static int pass = 60;
 
 
 
@@ -41,7 +42,7 @@ public class Student {
         System.out.print("name: "+ name+ "\tenglish: "+ english+ "\tmath: "+ math +
                 "\taverage: "+ getAvg());
 
-        if (getAvg() > 60) {
+        if (getAvg() > pass) {
             System.out.println("\tPASS");
         }
         else {
