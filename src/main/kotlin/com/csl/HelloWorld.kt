@@ -62,3 +62,5 @@ class Human(var name:String="jack", var weight:Float, var height:Float) {
 
 // kotlin 沒有三元運算式  因為 =號/return/字串+法 後面可以放if~else~(JAVA if else 是statement Kotlin則變成Expression)
 // 字串裡呼叫方法 ${ method }
+// 沒有寫存取修飾子 access modifier 預設是 public
+// internal 則是 module可見
