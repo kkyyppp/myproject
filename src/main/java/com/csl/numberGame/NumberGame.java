@@ -8,4 +8,11 @@ public abstract class NumberGame {
     int numberCount = 0;
 
     public abstract void generate();
+
+    public boolean volidate() {
+        if (numbers.size() == numberCount)
+            return true;
+        else
+            return false;
+    }
 }
