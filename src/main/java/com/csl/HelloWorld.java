@@ -51,6 +51,7 @@ public class HelloWorld {
     //叫出功能選單 = alt + iinsert
     //抽取出程method = ctrl + alt +M
     //新增Constructor/getter setter = alt + insert
+    //查看function可以放什麼種類的參數 = ctrl+P
 
 
     //System.out.println = sout + tab
