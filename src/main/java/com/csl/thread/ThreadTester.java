@@ -12,7 +12,7 @@ public class ThreadTester {
             @Override
             public void run() {
                 for (int i=0; i<10 ; i++) {
-                    System.out.println("thread " + i);
+                    System.out.println("com/csl/thread " + i);
                     try {
                         sleep(50);
                     } catch (InterruptedException e) {
@@ -47,7 +47,7 @@ public class ThreadTester {
         //使用lambda
          new Thread(()-> {
             for (int i=0; i<10; i++) {
-                System.out.println("thread runnable lambda " + i);
+                System.out.println("com.csl.thread runnable lambda " + i);
 
                 try {
                     Thread.sleep(50);
