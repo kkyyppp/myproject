@@ -52,6 +52,7 @@ public class HelloWorld {
     //抽取出程method = ctrl + alt +M
     //新增Constructor/getter setter = alt + insert
     //查看function可以放什麼種類的參數 = ctrl+P
+    //加入try catch = ctrl + atl + t
 
 
     //System.out.println = sout + tab
